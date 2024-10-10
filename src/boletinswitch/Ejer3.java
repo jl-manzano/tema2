@@ -35,10 +35,10 @@ public class Ejer3 {
 		opcion = sc.next().charAt(0);
 		
 		// DEFINIR CONDICIONAL SWITCH -> REALIZAR OPERACIÓN INDICADA
-		switch(Character.toLowerCase(opcion)) { // IGNORA MAYÚSC. Y MINÚSC. EN CARACTERES
+		switch(Character.toLowerCase(opcion)) { //  transforma el valor introducido en minúsc.
 		case 'a'-> // ENTRA SI CARÁCTER ES 'A' o 'a'
 		System.out.println("SUMA: " + (num1 + num2));
-		case 'b' -> // ENTRA SI CARÁCTER ES 'B' o 'b'
+		case 'b' -> // ENTRA SI CARÁCTER ES 'B' TRASo 'b'
 		System.out.println("RESTA: " + (num1 - num2));
 		case 'c' -> // ENTRA SI CARÁCTER ES 'C' o 'c'
 		System.out.println("PRODUCTO: " + (num1 * num2));

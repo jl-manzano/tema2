@@ -28,7 +28,7 @@ public class Ejer4 {
 		// IMPRIMIR MENSAJE CONSOLA PARA INTRODUCIR VALOR
 		System.out.println("Introduzca cuánto ha sacado en la 1a tirada (UNO, DOS, ...) : ");
 		
-		// LEER Nº TIPO ENTERO (INT) INGRESADO EN CONSOLA (toUpperCase -> transforma el valor introducido en mayúsc.
+		// LEER Nº TIPO ENTERO (INT) INGRESADO EN CONSOLA (toUpperCase -> transforma el valor introducido en mayúsc.)
 		dado1 = sc.next().toUpperCase();
 		
 		// IMPRIMIR MENSAJE CONSOLA PARA INTRODUCIR VALOR
