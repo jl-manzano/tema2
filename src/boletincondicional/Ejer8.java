@@ -31,7 +31,7 @@ public class Ejer8 {
 		
 		// DEFINIR CONDICIONAL SWITCH -> DETERMINAR Nº DIAS DEL MES
 		switch(mes) {
-		case 1 -> result = 31;
+		case 1, 3, 5, 7, 8, 10, 12 -> result = 31;
 		case 2 -> {
 			if (esBisiesto) { // ENTRA SI VARIABLE TIPO 'BOOLEAN' DEVUELVE 'TRUE' -> AÑO ES BISIESTO
 				result = 29;
@@ -39,16 +39,7 @@ public class Ejer8 {
 				result = 28;
 			}
 		}
-		case 3 -> result = 31;
-		case 4 -> result = 30;
-		case 5 -> result = 31;
-		case 6 -> result = 30;
-		case 7 -> result = 31;
-		case 8 -> result = 31;
-		case 9 -> result = 30;
-		case 10 -> result = 31;
-		case 11 -> result = 30;
-		case 12 -> result = 31;
+		case 4, 6, 9, 11 -> result = 30;
 		default -> System.out.println("Mes no válido.");
 		
 		}

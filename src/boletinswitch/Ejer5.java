@@ -21,7 +21,7 @@ public class Ejer5 {
 		switch (carnet) {
 		case "E" -> System.out.println("Remolques"); // ENTRA SI CARNET ES 'E'
 		case "D" -> System.out.println("Autobuses"); // ENTRA SI CARNET ES 'D'
-		case "C1", "C2", "C3", "C4", "C5" -> System.out.println("Camiones"); // ENTRA SI CARNET ES 'C1 -C5'
+		case "C1", "C2", "C3", "C4", "C5" -> System.out.println("Camiones"); // ENTRA SI CARNET ES 'C1 - C5'
 		case "A"  -> System.out.println("Motocicletas"); // ENTRA SI CARNET ES 'A'
 		case "B1", "B2" -> System.out.println("Automóviles"); // ENTRA SI CARNET ES 'B1-B2'
 		default -> 	System.out.println("Categoría no contemplada"); // ENTRA SI NO CORRESPONDE CON NINGUNA OPCIÓN
