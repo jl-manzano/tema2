@@ -23,7 +23,7 @@ public class Ejer4 {
 		// DECLARAR CONDICIONAL IF -> DETERMINAR SI NUM ESTÁ DENTRO DEL RANGO
 		if (num < 1 || num > 99) { // ENTRA SI NUM ESTÁ FUERA DEL RANGO
 			System.out.println("El nº debe estar entre 1 y 99.");
-		} else if (num >= 1 && num <= 29) { // ENTRA SI NUM ESTÁ ENTRE 1 Y 29
+		} else if (num >= 1 && num <= 19) { // ENTRA SI NUM ESTÁ ENTRE 1 Y 29
 			switch (num) {  // DETERMINAR NUM DESCRITO CORRESPONDIENTE A NUM INTRODUCIDO
 			case 1 -> result = "uno";
 			case 2 -> result = "dos";
@@ -45,21 +45,13 @@ public class Ejer4 {
 			case 18 -> result = "dieciocho";
 			case 19 -> result = "diecinueve";
 			case 20 -> result = "veinte";
-			case 21 -> result = "veintiuno";
-			case 22 -> result = "veintidós";
-			case 23 -> result = "veintitrés";
-			case 24 -> result = "veinticuatro";
-			case 25 -> result = "veinticinco";
-			case 26 -> result = "veintiséis";
-			case 27 -> result = "veintisiete";
-			case 28 -> result = "veintiocho";
-			case 29 -> result = "veintinueve";
 			}
 
 		} else { // ENTRA SI EL NUM ES MAYOR DE 29
 			decena = num / 10; // CALCULA LA DECENA DEL NUM INTRODUCIDO
 			unidad = num % 10; // CALCULA LA UNIDAD DEL NUM INTRODUCIDO
 			switch (decena) { // DETERMINAR DECENA DESCRITA CORRESPONDIENTE A NUM INTRODUCIDO
+			case 2 -> result = "veinti";
 			case 3 -> result = "treinta";
 			case 4 -> result = "cuarenta";
 			case 5 -> result = "cincuenta";
