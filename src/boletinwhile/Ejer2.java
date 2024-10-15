@@ -8,36 +8,41 @@ public class Ejer2 {
 		// DECLARAR VARIABLES TIPO ENTERO (INT)
 		int num;
 		int contador = 0;
-			
+		
 		// CREAR OBJETO SCANNER
 		Scanner sc = new Scanner(System.in);
 		
 		// IMPRIMIR MENSAJE CONSOLA PARA INTRODUCIR VALOR
-		System.out.println("Introduzca un / otro nº: ");
-					
+		System.out.println("Introduce un / otro nº: ");
+	
 		// LEER Nº ENTERO (INT) INGRESADO EN CONSOLA
 		num = sc.nextInt();
-					
-		// CREAR BUCLE WHILE -> PEDIRÁ Nº ENTERO CONTANDO CADA Nº INT (+) INTRODUCIDO HASTA INTRODUCIR (-)
+		
+		// CREAR BUCLE WHILE -> CONTAR Nºs POSITIVOS INTRODUCIDOS POR USUARIO HASTA INTRODUCIR NEGATIVO
 		while (num >= 0) {
 			
-			// INCREMENTAR EN 1 LA VARIABLE CONTADOR
+			// INCREMENTAR EN 1 VARIABLE CONTADOR
 			contador++;
-			
+
 			// IMPRIMIR MENSAJE CONSOLA PARA INTRODUCIR VALOR
-			System.out.println("Introduzca un / otro nº: ");
-			
+			System.out.println("\nIntroduce un / otro nº: ");
+		
 			// LEER Nº ENTERO (INT) INGRESADO EN CONSOLA
 			num = sc.nextInt();
-			
-			// Nº INTRODUCIDO
-			System.out.println("Nº introducido: " + num);
-			// Nºs INTRODUCIDOS HASTA EL MOMENTO
-			System.out.println("Ha introducido " + contador + " nºs.");
 						
 		}
 		
-		// IMPRIMIR RESULTADO PANTALLA
+		// DEFINIR CONDICIONAL -> IMPRIMIR CONTADOR Nºs
+		if (contador != 0) { // ENTRA SI CONTADOR ES != 0
+			
+			// Nºs INTRODUCIDOS HASTA EL MOMENTO
+			System.out.println("\nHa introducido " + contador + " nºs.");
+			
+		} else { // ENTRA SI CONTADOR == 0
+			System.out.println("\nHa introducido un valor negativo al iniciar.");
+		}
+		
+		// IMPRIMIR MENSAJE PROGRAMA
 		System.out.println("\nFin del programa.");
 		
 		// CERRAR OBJETO SCANNER

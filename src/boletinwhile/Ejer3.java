@@ -5,42 +5,47 @@ import java.util.Scanner;
 public class Ejer3 {
 	public static void main(String[] args) {
 		
-		// DECLARAR VARIABLES TIPO ENTERO (INT)
+		// DECLARAR VARIABLES TIPO ENTERO (INT) Y DECIMAL (DOUBLE)
 		int num;
 		int suma = 0;
 		int contador = 0;
-		int media = 0;
+		double media;
 		
 		// CREAR OBJETO SCANNER
 		Scanner sc = new Scanner(System.in);
-				
-		// IMPRIMIR MENSAJE CONSOLA PARA INTRODUCIR VALOR
-		System.out.println("Introduzca un / otro nº: ");
-							
-		// LEER Nº ENTERO (INT) INGRESADO EN CONSOLA
+		
+		// IMPRIMIR MENSAJE CONSOLA -> INTRODUCIR VALOR
+		System.out.println("Introduce un / otro nº: ");
+		
+		// LEER Nº TIPO ENTERO (INT)
 		num = sc.nextInt();
-							
-		// CREAR BUCLE WHILE -> PEDIRÁ Nº ENTERO CONTANDO CADA Nº INT (+) INTRODUCIDO HASTA INTRODUCIR (-)
+		
+		// CREAR BUCLE WHILE -> SUMAR Y CONTAR Nºs POSITIVOS INTRODUCIDOS POR USUARIO HASTA INTRODUCIR NEGATIVO
 		while (num >= 0) {
-			suma = suma + num;
-			contador++;
-			media = suma / contador;
-			// IMPRIMIR MENSAJE CONSOLA PARA INTRODUCIR VALOR
-			System.out.println("Introduzca un / otro nº: ");
-								
-			// LEER Nº ENTERO (INT) INGRESADO EN CONSOLA
-			num = sc.nextInt();
 			
+			// SUMAR Nº INGRESADO A VARIABLE SUMA
+			suma = suma + num;
+			
+			// INCREMENTAR EN 1 VARIABLE CONTADOR
+			contador++;
+			
+			// IMPRIMIR MENSAJE CONSOLA -> INTRODUCIR VALOR
+			System.out.println("Introduce un / otro nº: ");
+			
+			// LEER Nº TIPO ENTERO (INT)
+			num = sc.nextInt();
+
 		}
 		
-		// DEFINIR CONDICIONAL IF -> DETERMINAR SI USUARIO NO HA INTROUCIDO Nº O HA INTRODUCIDO VALOR < 0
-		if (contador == 0) { // ENTRA SI CONTADOR = 0 
-			System.out.println("\nEl usuario ha introducido un valor negativo");
-		} else { // ENTRA SI CONTADOR != 0
-			System.out.println("\nMedia aritmética de nºs introducidos: " + media);
-		}		
-		
+		// DEFINIR CONDICIONAL IF -> CALCULAR MEDIA ARITMÉTICA Nºs INTRODUCIDOS SI CONTADOR != 0
+		if (contador != 0) { // ENTRA SI CONTADOR != 0
+		media = suma / contador;
+		System.out.println("\nLa media aritmética de los nºs introducidos (" + contador + ") es: " + media);
+		} else { // ENTRA SI CONTADOR = 0, 1er Nº INTRODUCIDO ES NEGATIVO 
+			System.out.println("\nEl nº introducido es < 0; por tanto, el resultado es indefinido");
+		}
 		// CERRAR OBJETO SCANNER
 		sc.close();
+		
 	}
 }
