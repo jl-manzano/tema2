@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class Ejer1 {
 	public static void main(String[] args) {
 		
-		// DECLARAR VARIABLES TIPO ENTERO (INT)
+		// DECLARAR VARIABLE PARA ALMACENAR NUM
 		int num;
+		
+		// DECLARAR VARIABLE PARA ALMACENAR SUMA NUMs
 		int suma = 0;
 		
 		// CREAR OBJETO SCANNER
@@ -22,7 +24,7 @@ public class Ejer1 {
 		while (num >= 0) {
 			
 			// SUMAR Nº INGRESADO A VARIABLE SUMA
-			suma = suma + num;
+			suma += num;
 			
 			// IMPRIMIR MENSAJE CONSOLA PARA INTRODUCIR VALOR
 			System.out.println("Introduce un / otro nº: ");

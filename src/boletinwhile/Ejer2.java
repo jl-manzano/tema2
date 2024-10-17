@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class Ejer2 {
 	public static void main(String[] args) {
 		
-		// DECLARAR VARIABLES TIPO ENTERO (INT)
+		// DECLARAR VARIABLE PARA ALMACENAR NUM
 		int num;
+		
+		// DECLARAR VARIABLE PARA ALMACENAR CONTADOR
 		int contador = 0;
 		
 		// CREAR OBJETO SCANNER

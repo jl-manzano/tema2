@@ -5,10 +5,16 @@ import java.util.Scanner;
 public class Ejer3 {
 	public static void main(String[] args) {
 		
-		// DECLARAR VARIABLES TIPO ENTERO (INT) Y DECIMAL (DOUBLE)
+		// DECLARAR VARIABLE PARA ALMACENAR NUM
 		int num;
+		
+		// DECLARAR VARIABLE PARA SUMA NUMs
 		int suma = 0;
+		
+		// DECLARAR VARIABLE PARA ALMACENAR CONTADOR
 		int contador = 0;
+		
+		// DECLARAR VARIABLE PARA ALMACENAR MEDIA NUMs
 		double media;
 		
 		// CREAR OBJETO SCANNER
@@ -24,7 +30,7 @@ public class Ejer3 {
 		while (num >= 0) {
 			
 			// SUMAR Nº INGRESADO A VARIABLE SUMA
-			suma = suma + num;
+			suma += num;
 			
 			// INCREMENTAR EN 1 VARIABLE CONTADOR
 			contador++;

@@ -5,20 +5,32 @@ import java.util.Scanner;
 public class Ejer4 {
 	public static void main(String[] args) {
 		
-		// DECLARAR VARIABLES TIPO ENTERO (INT) Y DECIMAL (DOUBLE)
+		// DECLARAR VARIABLE PARA ALMACENAR NUM
 		int num;
-		int contador = 0;
+		
+		// DECLARAR VARIABLE PARA ALMACENAR CONTADOR
+		int contador = 1;
+		
+		// DECLARAR VARIABLE PARA SUMAR NUMs (+)
 		int sumaP = 0;
+		
+		// DECLARAR VARIABLE PARA SUMAR NUMs (-)
 		int sumaN = 0;
+		
+		// DECLARAR VARIABLE PARA ALMACENAR CONTADOR NUMs (-)
 		int contadorN = 0;
+		
+		// DECLARAR VARIABLE PARA ALMACENAR CONTADOR CEROS
 		int contadorC = 0;
+		
+		// DECLARAR VARIABLE PARA CALCULAR MEDIA NUMs
 		double media;
 		
 		// CREAR OBJETO SCANNER
 		Scanner sc = new Scanner(System.in);
 		
 		// CREAR BUCLE WHILE -> ASEGURAR INTRODUZCA 10 NUMs 
-		while (contador < 10) {
+		while (contador <= 10) {
 			
 			// IMPRIMIR MENSAJE CONSOLA -> INTRODUCIR VALOR
 			System.out.println("Introduce un / otro nº: ");
@@ -33,7 +45,7 @@ public class Ejer4 {
 			if (num > 0) {
 				
 				// SUMAR Nº INGRESADO A VARIABLE sumaP
-				sumaP = sumaP + num;
+				sumaP += num;
 			
 			// ESTABLECER 2a CONDICIÓN -> DETERM. SI NUM ES < 0, SUMAR E INCREMENTAR VARIABLE CONTADOR Nºs NEGATIVOS
 			} else if (num < 0) { 
@@ -42,7 +54,7 @@ public class Ejer4 {
 				contadorN++;
 				
 				// SUMAR Nº INGRESADO A VARIABLE sumaN
-				sumaN = sumaN + num;
+				sumaN += num;
 				
 			} else {
 				
