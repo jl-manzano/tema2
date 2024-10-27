@@ -11,6 +11,9 @@ public class Ejer2 {
 		// declarar variable booleana
 		boolean esPrimo;
 		
+		// declarar variable e inicializar en 0 para almacenar contador
+		int contador = 0;
+		
 		// crear scanner
 		Scanner sc = new Scanner(System.in);
 		
@@ -20,30 +23,30 @@ public class Ejer2 {
 		// leer num introducido por usuario
 		num = sc.nextInt();
 		
-		if (num <= 1) {
-			esPrimo = false;
-			System.out.println(esPrimo);
-		}
-		
 		// crear bucle for
-		for (int i = 1; i < num; i++) {
-			
-		for (int j = 2; j < Math.sqrt(num); j++) {
-			if (num % j == 0) {
-				esPrimo = false;
-				System.out.println(esPrimo);
-			} else {
-				esPrimo = true;
-				System.out.println(esPrimo);
-
+		for (int i = 2; i <= num; i++) {
+			esPrimo = true;
+			// crear bucle for
+			for (int j = 2; j <= Math.sqrt(i); j++) {
+				
+				// declarar condicional if -> comprobar si el nº tiene divisores
+				if (i % j == 0) { // entra si el resto de la división es 0
+					esPrimo = false;
+				}
 			}
-						
+			
+			// declarar condicional if -> contar nºs primos
+			if (esPrimo) { //entra si esPrimo = true
+				contador++;
+			}
+			
 		}
 		
-		if (esPrimo) {
-			
-		}
-				
-		}
+		// imprimir resultado pantalla
+		System.out.println("Hay " + contador + " números primos entre 1 y " + num);
+		
+		// cerrar scanner
+		sc.close();
+		
 	}
 }
