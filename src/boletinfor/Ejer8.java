@@ -11,6 +11,12 @@ public class Ejer8 {
 		// declarar variable para almacenar numero B
 		int numeroB;
 		
+		// declarar variable para almacenar el mínimo
+		int min;
+		
+		// declarar variable para almacenar el máximo
+		int max;
+		
 		// crear scanner
 		Scanner sc = new Scanner(System.in);
 		
@@ -30,18 +36,17 @@ public class Ejer8 {
 		
 		// declarar condicional if-else -> comparar si numA < numB / viceversa
 		if (numeroA < numeroB) { // entra si numA < numB
+			min = numeroA;
+			max = numeroB;
 			
-			// crear bucle for -> mostrar nºs desde A hasta B
-			for (int i = numeroA; i <= numeroB; i++) {
-				System.out.println(i);
-			}
 		} else { // entra si numB < numA
-			
-			// crear bucle for -> mostrar nºs desde B hasta A
-			for (int i = numeroB; i <= numeroA; i++) {
+			min = numeroB;
+			max = numeroA;
+		}
+			// crear bucle for -> mostrar nºs desde min hasta máximo
+			for (int i = min; i <= max; i++) {
 				System.out.println(i);
 			}
-		}
 		
 		// cerrar scanner
 		sc.close();

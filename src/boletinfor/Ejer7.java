@@ -23,7 +23,7 @@ public class Ejer7 {
 		// declarar condicional if -> comprobar si num es <= 1
 		if (num <= 1) {
 			esPrimo = false;
-		}
+		} else {
 		
 		// crear bucle for
 		for (int i = 2; i <= Math.sqrt(num); i++) {
@@ -32,6 +32,8 @@ public class Ejer7 {
 			if (num % i == 0) { // entra si el resto de la división es 0
 				esPrimo = false;
 			}
+		}
+		
 		}
 		
 		// declarar condicional if-else -> comparar valor variable 'esPrimo' e imprimir resultado pantalla 
