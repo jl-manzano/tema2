@@ -2,10 +2,10 @@ package boletinbucles;
 
 import java.util.Scanner;
 
-public class Ejer6 {
+public class Ejer7 {
 	public static void main(String[] args) {
 		
-		// declarar variable para almacenar num
+		// declarar variable para almacenar un num
 		int num;
 		
 		// crear scanner
@@ -20,14 +20,14 @@ public class Ejer6 {
 		// crear bucle for
 		for (int i = 1; i <= num; i++) {
 			
-			// crear bucle for -> espacios
-			for (int j = num - i; j >= 1; j--) {
-				System.out.print(" ");
+			// crear bucle for -> ascender
+			for (int j = 1; j <= i; j++) {
+				System.out.print(j);
 			}
 			
-			// crear bucle for -> asteriscos '*'
-			for (int k = 1; k <= i; k++) {
-				System.out.print("* ");
+			// crear bucle for -> descender
+			for (int k = i - 1; k >= 1; k--) {
+				System.out.print(k);
 			}
 			
 			// imprimir salto de línea
