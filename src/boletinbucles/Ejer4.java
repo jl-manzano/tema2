@@ -17,6 +17,9 @@ public class Ejer4 {
 		// declarar variable para almacenar el mcm e inicializar en 1 por si no se encuentra otro divisor común
 		int mcm = 1;
 		
+		// declarar variable tipo 'boolean' para almacenar si se ha encontrado un mcd
+		boolean enc = false;
+		
 		// crear scanner
 		Scanner sc = new Scanner(System.in);
 		
@@ -35,17 +38,20 @@ public class Ejer4 {
 		// determinar nº mayor (a / b)
 		mayor = Math.max(numeroA, numeroB);
 		
-		// crear bucle while
-		while (true) {
+		// crear bucle for
+		while (!enc) {
 			
 			// definir condicional if -> comprobar si el nº es divisible entre los dos nºs
 			if (mayor % numeroA == 0 && mayor % numeroB == 0) { // entra si el resto de las 2 divisiones es 0
 				System.out.println("\nEl mínimo común múltiplo de " + numeroA + " y " + numeroB + " es " + mcm + ".");
-				break;
-			}
+				enc = true;
+				
+			} else {
 			
 			// incrementar en 1 variable mayor
 			mayor++;
+			
+			}
 		}
 				
 		// cerrar scanner
