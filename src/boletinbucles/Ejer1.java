@@ -60,17 +60,17 @@ public class Ejer1 {
 
 			} else {
 				if (segundos == 60) { // entra si segundos = 60
-					segundos = 00;
+					segundos = 0;
 					minutos++;
 				}
 
 				if (minutos == 60) { // entra si minutos = 60
-					minutos = 00;
+					minutos = 0;
 					hora++;
 				}
 
 				if (hora == 24) { // entra si hora = 60
-					hora = 00;
+					hora = 0;
 				}
 			}
 

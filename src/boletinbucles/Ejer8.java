@@ -9,10 +9,10 @@ public class Ejer8 {
 		int numInicial;
 
 		// declarar variable para almacenar num1
-		int num;
+		int num = 0;
 
 		// declarar variable para almacenar total nºs introducidos
-		int contadorNum = 0;
+		int contadorNum = 1;
 
 		// declarar variable para almacenar total nºs fallados
 		int contadorFallos = 0;
@@ -25,34 +25,24 @@ public class Ejer8 {
 
 		// leer num introducido por usuario
 		numInicial = sc.nextInt();
+		
+		 System.out.print("Introduzca un nº (0 para terminar): ");
+         num = sc.nextInt();
 
 		// crear bucle do-while
-		do {
+		while (num != 0) {  // El bucle se ejecuta mientras num sea distinto de 0
+            contadorNum++;  // Contar el número introducido
 
-			System.out.println();
+            if (num > 0 && num <= numInicial) {  // Comprobar si es un fallo
+                System.out.println("Fallo, es menor");
+                contadorFallos++;
+            }
 
-			// pedir num a usuario
-			System.out.println("Introduzca un nº: ");
+            numInicial = num;  // Actualizar el valor inicial al último número introducido
 
-			// leer num introducido por usuario
-			num = sc.nextInt();
-
-			// incrementar en 1 contador num nºs introducidos
-			contadorNum++;
-
-			// definir condicional if-> comprobar si num es == 0 / <= numInicial
-
-			if (num > 0 && num <= numInicial) { // entra si num <= numInicial)
-				System.out.println("\nFallo, es menor");
-				// incrementar en 1 contador num fallados
-				contadorFallos++;
-
-			}
-
-			// asignar último nº dado a variable numInicial
-			numInicial = num;
-
-		} while (num != 0);
+            System.out.print("Introduzca un nº (0 para terminar): ");
+            num = sc.nextInt();
+        }
 
 		// imprimir contador nºs introducidos en pantalla
 		System.out.println("\nTotal de números introducidos: " + contadorNum);

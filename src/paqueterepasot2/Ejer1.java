@@ -21,22 +21,24 @@ public class Ejer1 {
 
 		} while (num <= 0);
 
-		// crear bucle for -> filas
+
+		
 		for (int i = 1; i <= num; i++) {
-			
-			// crear bucle for -> columnas
-			for (int j = 1; j <= num; j++) {
-				
-				// definir condicinal if - else -> comprobar si las filas o las columnas == 1 / == num
-				if (i == 1 || i == num || j == 1 || j == num) {
-					System.out.print("*");
-				} else {
-					System.out.print(" ");
-				}
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
 			}
 			
-			// imprimir salto de línea
+			for (int j = 0; j < num - i; j++) {
+				System.out.print("*");
+				
+				if (j < num - i - 1) {
+					System.out.print(" ");
+			}
+
+			}
+			
 			System.out.println();
+			
 		}
 
 	}

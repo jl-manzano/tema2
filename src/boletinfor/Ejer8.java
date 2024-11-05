@@ -35,14 +35,18 @@ public class Ejer8 {
 		System.out.println();
 		
 		// declarar condicional if-else -> comparar si numA < numB / viceversa
-		if (numeroA < numeroB) { // entra si numA < numB
+		/*if (numeroA < numeroB) { // entra si numA < numB
 			min = numeroA;
 			max = numeroB;
 			
 		} else { // entra si numB < numA
 			min = numeroB;
 			max = numeroA;
-		}
+		}*/
+		
+		min = Math.min(numeroA, numeroB);
+		max = Math.max(numeroA, numeroB);
+		
 			// crear bucle for -> mostrar nºs desde min hasta máximo
 			for (int i = min; i <= max; i++) {
 				System.out.println(i);

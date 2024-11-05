@@ -36,26 +36,26 @@ public class Ejer5 {
 		
 		// crear bucle do-while
 		do {
-						
+			
+			System.out.println();
+			
 			// definir condicional if -> comprobar si random > num 
+			System.out.println("¿Es el número " + random + "?");
 			
 			if (random > num) { // entrará si random > num
 				max = random;
-				System.out.println("El nº pensado es menor");
+				System.out.println("El nº pensado es menor\n");
 			}
 			
 			// definir condicional if -> comprobar si random < num 
 			
 			if (random < num) { // entrará si random < num
 				min = random;
-				System.out.println("El nº pensado es mayor");
+				System.out.println("El nº pensado es mayor\n");
 			}
 			
 			// generar num aleat. entre min y max
 			random = rand.nextInt(min, max);
-			
-			// imprimir valor random
-			System.out.println(random);
 			
 		} while (random != num);
 		

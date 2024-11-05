@@ -36,7 +36,7 @@ public class Ejer10 {
 		// crear bucle while
 		while (num > 0) {
 			
-			// obtener dígito dígito
+			// obtener último dígito
 			digito = num % 10;
 			
 			// vamos calculando num invertido

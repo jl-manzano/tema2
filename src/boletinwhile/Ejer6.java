@@ -30,6 +30,12 @@ public class Ejer6 {
 			if (altura > altMax) {
 				altMax = altura;
 			}
+			
+			// IMPRIMIR MENSAJE CONSOLA -> INTRODUCIR VALOR
+			System.out.println("Introduce altura del árbol 'cm': ");
+			
+			// LEER Nº TIPO ENTERO (INT)
+			altura = sc.nextInt();
 		}
 		
 		System.out.println(altMax != -1 ? "La altura máxima es: " + altMax : "Se ha introducido un valor inválido");
