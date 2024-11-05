@@ -1,148 +1,141 @@
 package paqueterepasot2;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class EjercicioExamen {
 	public static void main(String[] args) {
-		
-		// crear clase random
-		Random rand = new Random();
+		Scanner sc = new Scanner(System.in);
 
-		// declarar variable para almacenar valor aleatorio dado1
-		int dado1;
+		int hora = -1, minuto = -1, segundo = -1;
+		boolean datosValidos = false;
 
-		// declarar variable para almacenar valor aleatorio dado2
-		int dado2;
+		do {
+			try {
+				System.out.println("Introduzca la hora (0-12): ");
+				hora = sc.nextInt();
+				System.out.println("Introduzca los minutos (0-59): ");
+				minuto = sc.nextInt();
+				System.out.println("Introduzca los segundos (0-59): ");
+				segundo = sc.nextInt();
 
-		// declarar variable para almacenar posición jug1 en partida
-		int posicionJug1 = 0;
+				if (hora < 0 || hora > 23 || minuto < 0 || minuto > 59 || segundo < 0 || segundo > 59) {
+					System.out.println("Error: Valores no válidos. Intente de nuevo.");
+				} else {
+					datosValidos = true;
 
-		// declarar variable para almacenar posición jug2 en partida
-		int posicionJug2 = 0;
+					String textoHora = "", textoMinuto = "", textoSegundo = "";
 
-		// declarar variable para almacenar total resultado dados
-		int total;
+					// Convertir la hora a texto
+					for (int i = 0; i < 3; i++) {
+						int valor = (i == 0) ? hora : (i == 1) ? minuto : segundo;
+						String texto = "";
 
-		// declarar variable para almacenar posición jug2 en partida
-		int posicionActual;
+						switch (valor) {
+						case 0 -> texto = "cero";
+						case 1 -> texto = "uno";
+						case 2 -> texto = "dos";
+						case 3 -> texto = "tres";
+						case 4 -> texto = "cuatro";
+						case 5 -> texto = "cinco";
+						case 6 -> texto = "seis";
+						case 7 -> texto = "siete";
+						case 8 -> texto = "ocho";
+						case 9 -> texto = "nueve";
+						case 10 -> texto = "diez";
+						case 11 -> texto = "once";
+						case 12 -> texto = "doce";
+						case 13 -> texto = "trece";
+						case 14 -> texto = "catorce";
+						case 15 -> texto = "quince";
+						case 20 -> texto = "veinte";
+						case 30 -> texto = "treinta";
+						case 40 -> texto = "cuarenta";
+						case 50 -> texto = "cincuenta";
+						default -> {
+							int decena = valor / 10;
+							int unidad = valor % 10;
+							switch (decena) {
+							case 1 -> texto = "dieci" + switch (unidad) {
+							case 1 -> "uno";
+							case 2 -> "dos";
+							case 3 -> "tres";
+							case 4 -> "cuatro";
+							case 5 -> "cinco";
+							case 6 -> "seis";
+							case 7 -> "siete";
+							case 8 -> "ocho";
+							case 9 -> "nueve";
+							default -> "";
+							};
+							case 2 -> texto = "veinti" + switch (unidad) {
+							case 1 -> "uno";
+							case 2 -> "dos";
+							case 3 -> "tres";
+							case 4 -> "cuatro";
+							case 5 -> "cinco";
+							case 6 -> "seis";
+							case 7 -> "siete";
+							case 8 -> "ocho";
+							case 9 -> "nueve";
+							default -> "";
+							};
+							case 3 -> texto = "treinta y " + switch (unidad) {
+							case 1 -> "uno";
+							case 2 -> "dos";
+							case 3 -> "tres";
+							case 4 -> "cuatro";
+							case 5 -> "cinco";
+							case 6 -> "seis";
+							case 7 -> "siete";
+							case 8 -> "ocho";
+							case 9 -> "nueve";
+							default -> "";
+							};
+							case 4 -> texto = "cuarenta y " + switch (unidad) {
+							case 1 -> "uno";
+							case 2 -> "dos";
+							case 3 -> "tres";
+							case 4 -> "cuatro";
+							case 5 -> "cinco";
+							case 6 -> "seis";
+							case 7 -> "siete";
+							case 8 -> "ocho";
+							case 9 -> "nueve";
+							default -> "";
+							};
+							case 5 -> texto = "cincuenta y " + switch (unidad) {
+							case 1 -> "uno";
+							case 2 -> "dos";
+							case 3 -> "tres";
+							case 4 -> "cuatro";
+							case 5 -> "cinco";
+							case 6 -> "seis";
+							case 7 -> "siete";
+							case 8 -> "ocho";
+							case 9 -> "nueve";
+							default -> "";
+							};
+							}
+						}
+						}
 
-		// declarar variable para almacenar turno jug
-		int turno = 1;
+						if (i == 0)
+							textoHora = texto;
+						else if (i == 1)
+							textoMinuto = texto;
+						else
+							textoSegundo = texto;
+					}
 
-		// declarar variable boolean -> comprobar si vuelve a tirar
-		boolean vuelveTirar = false;
-
-		// declarar e inicializar variable de la meta del juego
-		int meta = 63;
-		
-		while (posicionJug1 < meta && posicionJug2 < meta) {
-			System.out.println("Turno del Jugador " + turno);
-			
-			dado1 = rand.nextInt(1, 6);
-			dado2 = rand.nextInt(1, 6);
-			
-			System.out.println("Dado 1: " + dado1 + " , Dado 2: " + dado2);
-			
-			total = dado1 + dado2;
-			
-			if (turno == 1) {
-				posicionActual = posicionJug1 + total;
-			} else {
-				posicionActual = posicionJug2 + total;
-
-			}
-			
-			System.out.println("Jugador " + turno + " avanza a la posición " + posicionActual);
-
-			switch (posicionActual) {
-			case 5 -> {
-				posicionActual = 9;
-				System.out.println("¡De oca en oca! Salta a la casilla 9 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 9 -> {
-				posicionActual = 14;
-				System.out.println("¡De oca en oca! Salta a la casilla 14 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 14 -> {
-				posicionActual = 18;
-				System.out.println("¡De oca en oca! Salta a la casilla 18 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 18 -> {
-				posicionActual = 23;
-				System.out.println("¡De oca en oca! Salta a la casilla 23 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 23 -> {
-				posicionActual = 27;
-				System.out.println("¡De oca en oca! Salta a la casilla 27 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 27 -> {
-				posicionActual = 32;
-				System.out.println("¡De oca en oca! Salta a la casilla 32 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 32 -> {
-				posicionActual = 36;
-				System.out.println("¡De oca en oca! Salta a la casilla 36 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 36 -> {
-				posicionActual = 41;
-				System.out.println("¡De oca en oca! Salta a la casilla 41 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 41 -> {
-				posicionActual = 45;
-				System.out.println("¡De oca en oca! Salta a la casilla 45 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 45 -> {
-				posicionActual = 50;
-				System.out.println("¡De oca en oca! Salta a la casilla 50 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 50 -> {
-				posicionActual = 54;
-				System.out.println("¡De oca en oca! Salta a la casilla 54 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-			case 54 -> {
-				posicionActual = 59;
-				System.out.println("¡De oca en oca! Salta a la casilla 59 y vuelve a tirar.");
-				vuelveTirar = true;
-			}
-
-			default -> {
-				System.out.println("Ninguna acción especial.");
-				vuelveTirar = false;
-			}
-			
-			}
-			
-			System.out.println();
-			
-			if (turno == 1) {
-				posicionJug1 = posicionActual;
-				
-				if (posicionJug1 >= meta) {
-					System.out.println("Has ganado Jug1");
+					System.out.println("La hora es: " + textoHora + " horas, " + textoMinuto + " minutos y "
+							+ textoSegundo + " segundos.");
 				}
-			} else {
-				posicionJug2 = posicionActual;
-				
-				if (posicionJug2 >= meta) {
-					System.out.println("Has ganado Jug2");
-				}
+			} catch (Exception e) {
+				System.out.println("Error: Debe introducir valores numéricos. Intente de nuevo.");
+				sc.nextLine();
 			}
-			
-			if (!vuelveTirar) {
-				turno = (turno == 1) ? 2 : 1;
-			}
-			
-		}
+		} while (!datosValidos);
+
+		sc.close();
 	}
 }
