@@ -2,9 +2,9 @@ package paqueterepasot2;
 
 import java.util.Random;
 
-public class EjercicioOca {
+public class EjercicioExamen {
 	public static void main(String[] args) {
-
+		
 		// crear clase random
 		Random rand = new Random();
 
@@ -34,22 +34,24 @@ public class EjercicioOca {
 
 		// declarar e inicializar variable de la meta del juego
 		int meta = 63;
-
+		
 		while (posicionJug1 < meta && posicionJug2 < meta) {
 			System.out.println("Turno del Jugador " + turno);
-
+			
 			dado1 = rand.nextInt(1, 6);
 			dado2 = rand.nextInt(1, 6);
-
+			
 			System.out.println("Dado 1: " + dado1 + " , Dado 2: " + dado2);
-
+			
 			total = dado1 + dado2;
-
+			
 			if (turno == 1) {
 				posicionActual = posicionJug1 + total;
 			} else {
 				posicionActual = posicionJug2 + total;
+
 			}
+			
 			System.out.println("Jugador " + turno + " avanza a la posición " + posicionActual);
 
 			switch (posicionActual) {
@@ -120,28 +122,27 @@ public class EjercicioOca {
 			}
 			
 			}
-
+			
 			System.out.println();
-
+			
 			if (turno == 1) {
 				posicionJug1 = posicionActual;
-				if (posicionActual >= meta) {
-					System.out.println("Jugador 1 ha ganado");
+				
+				if (posicionJug1 >= meta) {
+					System.out.println("Has ganado Jug1");
 				}
-
 			} else {
 				posicionJug2 = posicionActual;
+				
 				if (posicionJug2 >= meta) {
-					System.out.println("Jugador 2 ha ganado");
+					System.out.println("Has ganado Jug2");
 				}
-
 			}
-
+			
 			if (!vuelveTirar) {
-				turno = (turno == 1) ? 2 : 1; // Cambiar de jugador
+				turno = (turno == 1) ? 2 : 1;
 			}
-
+			
 		}
-
 	}
 }
