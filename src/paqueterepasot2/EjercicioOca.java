@@ -125,7 +125,7 @@ public class EjercicioOca {
 
 			if (turno == 1) {
 				posicionJug1 = posicionActual;
-				if (posicionActual >= meta) {
+				if (posicionJug1 >= meta) {
 					System.out.println("Jugador 1 ha ganado");
 				}
 
