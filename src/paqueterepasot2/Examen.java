@@ -17,7 +17,7 @@ public class Examen {
 
 		// variable para almacenar valor tipo carta
 		String valorTipoCarta = "";
-		
+
 		// variable para almacenar valor carta
 		double valorCarta;
 
@@ -40,7 +40,7 @@ public class Examen {
 		Random rand = new Random();
 
 		System.out.println("JUEGO DE LAS 7 Y MEDIA");
-		
+
 		while (juegoCont) {
 
 			System.out.println("\nTurno del jugador " + turno);
@@ -62,81 +62,82 @@ public class Examen {
 				}
 
 			} while (opcion != 's' && opcion != 'n');
+
 			if (opcion == 's') {
-			// generar carta aleatoria
-			carta = rand.nextInt(1,11);
-			
-			// generar tipo carta aleatoria
-			tipoCarta = rand.nextInt(1,5);
-			
-			switch(tipoCarta) {
-			case 1 -> {
-				valorTipoCarta = "oros";
-			}
-			
-			case 2 -> {
-				valorTipoCarta = "copas";
+				// generar carta aleatoria
+				carta = rand.nextInt(1, 11);
 
-			}
-			
-			case 3 -> {
-				valorTipoCarta = "espadas";
+				// generar tipo carta aleatoria
+				tipoCarta = rand.nextInt(1, 5);
 
-			}
-			
-			case 4 -> {
-				valorTipoCarta = "bastos";
-
-			}
-			
-			}
-			
-			// asignar valor carta
-			valorCarta = carta >= 8 ? 0.5 : carta;
-			
-			if (carta <= 7) {
-				System.out.println("Tu carta es: " + carta + " de " + valorTipoCarta);
-			} else if (carta == 8) {
-				System.out.println("Tu carta es: Sota de " + valorTipoCarta);
-
-			} else if (carta == 9) {
-				System.out.println("Tu carta es: Caballo de " + valorTipoCarta);
-
-			} else {
-				System.out.println("Tu carta es: Rey de " + valorTipoCarta);
-
-			}
-			
-			if (turno == 1) {
-				contadorJug1 += carta;
-				System.out.println("Tienes " + contadorJug1 + " puntos.\n");
-				if (contadorJug1 > 7.5) {
-					System.out.println("Te has pasado.\n");
-					turno = 2;
+				switch (tipoCarta) {
+				case 1 -> {
+					valorTipoCarta = "oros";
 				}
-				
-			} else {
-				contadorJug2 += carta;
-				System.out.println("Tienes " + contadorJug2 + " puntos.\n");
-				if (contadorJug2 > 7.5) {
-					System.out.println("Te has pasado.\n");
-					juegoCont = false;
+
+				case 2 -> {
+					valorTipoCarta = "copas";
+
 				}
-			}
-				
+
+				case 3 -> {
+					valorTipoCarta = "espadas";
+
+				}
+
+				case 4 -> {
+					valorTipoCarta = "bastos";
+
+				}
+
+				}
+
+				// asignar valor carta
+				valorCarta = carta >= 8 ? 0.5 : carta;
+
+				if (carta <= 7) {
+					System.out.println("Tu carta es: " + carta + " de " + valorTipoCarta);
+				} else if (carta == 8) {
+					System.out.println("Tu carta es: Sota de " + valorTipoCarta);
+
+				} else if (carta == 9) {
+					System.out.println("Tu carta es: Caballo de " + valorTipoCarta);
+
+				} else {
+					System.out.println("Tu carta es: Rey de " + valorTipoCarta);
+
+				}
+
+				if (turno == 1) {
+					contadorJug1 += valorCarta;
+					System.out.println("Tienes " + contadorJug1 + " puntos.\n");
+					if (contadorJug1 > 7.5) {
+						System.out.println("Te has pasado.\n");
+						turno = 2;
+					}
+
+				} else {
+					contadorJug2 += valorCarta;
+					System.out.println("Tienes " + contadorJug2 + " puntos.\n");
+					if (contadorJug2 > 7.5) {
+						System.out.println("Te has pasado.\n");
+						juegoCont = false;
+					}
+				}
+
 			} else if (turno == 1 && opcion == 'n') {
 				turno = 2;
 			} else {
 				juegoCont = false;
 				System.out.println("\nSaliendo del juego ...");
 			}
-			
+
 		}
-		
+
 		System.out.println("\nRESULTADO FINAL");
 		System.out.println("Puntuación del Jugador 1: " + contadorJug1);
 		System.out.println("Puntuación del Jugador 2: " + contadorJug2);
-		
+
 		if (contadorJug1 > 7.5 && contadorJug2 > 7.5) {
 			System.out.println("\nAmbos jugadores se han pasado. No hay ganador.");
 		} else if (contadorJug1 == contadorJug2) {
